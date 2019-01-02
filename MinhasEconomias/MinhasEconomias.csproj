@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\lib\**" />
+    <Content Remove="wwwroot\lib\**" />
+    <EmbeddedResource Remove="wwwroot\lib\**" />
+    <None Remove="wwwroot\lib\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20181110210827_MySaving.cs" />
+    <Compile Remove="Migrations\20181110210827_MySaving.Designer.cs" />
+    <Compile Remove="Migrations\20181110234208_MyEconimia.cs" />
+    <Compile Remove="Migrations\20181110234208_MyEconimia.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
+    <PackageReference Include="jQuery" Version="3.3.1" />
+    <PackageReference Include="materialized" Version="0.100.2" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\plugins\materialize-v1.0.0\font\" />
+    <Folder Include="wwwroot\themes\adminlte\css\" />
+    <Folder Include="wwwroot\themes\adminlte\fonts\" />
+    <Folder Include="wwwroot\themes\adminlte\js\" />
+  </ItemGroup>
+
+</Project>

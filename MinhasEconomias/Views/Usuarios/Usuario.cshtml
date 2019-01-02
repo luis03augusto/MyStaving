@@ -1,0 +1,72 @@
+﻿@model IList<MinhasEconomias.Models.Usuario>
+@{
+    ViewData["Title"] = "Usuario";
+}
+<div class="row">
+    <div>
+        <a href="FormUsuario"> <i class="material-icons my-icons">person_add</i></a>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12">
+        <table class="striped highlight centered responsive-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Email</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var usr in Model)
+                {
+                    <tr>
+                        <td>@Html.Raw(usr.Nome)</td>
+                        <td>@Html.Raw(usr.CPF)</td>
+                        <td>@Html.Raw(usr.Email)</td>
+                        <td onclick="abrirModal('@usr.Id')"><i class="material-icons my-icons-edit">create</i></td>
+                        <td onclick="DeletarUsr('@usr.Id')"><i class="material-icons my-icons-delet">delete_forever</i></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="modal-edit-user" class="modal">
+    
+    <div class="modal-content center-align">
+        <h4 class="center-align">Usuário</h4>
+        <div class="row">
+            <div class="input-field col s8">
+                <input type="text" name="usuario.Nome" id="nomeM" class="validate" />
+                <label for="nomeM">Nome</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s8">
+                <input type="text" name="usuario.CPF" id="cpfM" class="validate" />
+                <label for="cpfM">CPF</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s8">
+                <input type="email" name="usuario.Email" id="emailM" class="validate" />
+                <label for="emailM">Email</label>
+                <span class="helper-text" data-error="Inválido" data-success="Válido"></span>
+            </div>
+        </div>
+
+    </div>
+        <div class="modal-footer">
+            <button class="btn waves-effect waves-light" type="submit" name="action">
+                Salvar
+            </button>
+        </div>
+</div>
+
+@section Scripts{ 
+<script src="~/js/Usuario.js"></script>
+}

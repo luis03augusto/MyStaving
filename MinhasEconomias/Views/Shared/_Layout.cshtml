@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MinhasEconomias</title>
+    <link href="~/plugins/materialize-v1.0.0/materialize/css/materialize.css" rel="stylesheet" />
+    <link href="~/plugins/materialize-v1.0.0/font/icon.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="teal lighten-2">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Minha Economias</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="Usuarios/Usuario">Usuários</a></li>
+                <li><a href="#">Despesas</a></li>
+                <li><a href="#">Objetivo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <partial name="_CookieConsentPartial" />
+
+    <div class="body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - MinhasEconomias</p>
+        </footer>
+    </div>
+
+    <script src="~/plugins/jquery/jquery.js"></script>
+    <script src="~/plugins/materialize-v1.0.0/materialize/js/materialize.js"></script>
+    <script src="~/js/site.js"></script>   
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
